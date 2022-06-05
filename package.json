@@ -1,0 +1,85 @@
+{
+	"name": "mini-state",
+	"author": "simpleneeraj",
+	"version": "1.0.0",
+	"license": "MIT",
+	"main": "dist/index.js",
+	"typings": "dist/index.d.ts",
+	"module": "dist/mini-state.esm.js",
+	"description": "Manage react state with simple context api",
+	"files": [
+		"dist",
+		"src"
+	],
+	"engines": {
+		"node": ">=10"
+	},
+	"keywords": [
+		"proxy",
+		"state",
+		"react"
+	],
+	"scripts": {
+		"start": "tsdx watch ",
+		"build": "tsdx build ",
+		"build:major": "npm version major && tsdx build ",
+		"build:minor": "npm version minor && tsdx build ",
+		"build:patch": "npm version patch && tsdx build ",
+		"test": "tsdx test --passWithNoTests",
+		"lint": "tsdx lint",
+		"lint:fix": "tsdx lint --fix",
+		"commit": "git-cz",
+		"prepare": "tsdx build --format cjs",
+		"size": "size-limit"
+	},
+	"peerDependencies": {
+		"react": ">=16"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "tsdx lint"
+		}
+	},
+	"devDependencies": {
+		"@size-limit/preset-small-lib": "^7.0.8",
+		"@types/react": "^17.0.39",
+		"@types/react-dom": "^17.0.11",
+		"husky": "^7.0.4",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"size-limit": "^7.0.8",
+		"tsdx": "^0.14.1",
+		"tslib": "^2.3.1",
+		"typescript": "^3.9.10"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/packagewithsimpleneeraj/mini-state.git"
+	},
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/",
+		"access": "public"
+	},
+	"size-limit": [
+		{
+			"path": "dist/mini-state.cjs.development.js",
+			"limit": "900 B"
+		},
+		{
+			"path": "dist/mini-state.cjs.production.min.js",
+			"limit": "800 B"
+		},
+		{
+			"path": "dist/mini-state.esm.js",
+			"limit": "900 B"
+		},
+		{
+			"path": "dist/mini-state.umd.development.js",
+			"limit": "900 B"
+		},
+		{
+			"path": "dist/mini-state.umd.production.min.js",
+			"limit": "800 B"
+		}
+	]
+}
