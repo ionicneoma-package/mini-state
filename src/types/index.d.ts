@@ -9,7 +9,7 @@ interface ActionTypes {
     payload: any,
     [key: string]: any
 }
-interface CreateContextTypes<State, Action> {
+interface CreateCTXProps<State, Action> {
     type?: 'useState' | 'useReducer'
     reducer?: Reducer<State, Action>;
     initialState: State;

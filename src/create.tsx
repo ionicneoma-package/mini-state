@@ -1,5 +1,5 @@
 import * as React from "react";
-import type {CreateContextTypes, Reducer} from "types"
+import type {CreateCTXProps, Reducer} from "types"
 
 /**
  * Create Context with the help of createCTX() custom context creator
@@ -18,7 +18,7 @@ import type {CreateContextTypes, Reducer} from "types"
  */
 
 
-function createCTX<State, Action>(props: CreateContextTypes<State, Action>) {
+function createCTX<State, Action>(props: CreateCTXProps<State, Action>) {
   const { reducer, initialState, type = 'useState' } = props;
 
   if (type === "useReducer" && typeof reducer === 'undefined') {
@@ -31,6 +31,7 @@ function createCTX<State, Action>(props: CreateContextTypes<State, Action>) {
     throw new Error("You forget to initilize your initialState");
   }
   switch (type) {
+    // @ts-expect-error
     case 'useReducer': {
       if (
         typeof reducer !== 'undefined'
