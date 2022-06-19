@@ -70,7 +70,7 @@ const Root = () => {
 export default Root;
 ```
 
-## Congratulation 🎉🎉
+## Congratulations 🎉🎉
 
 We successfully added this to your application
 
