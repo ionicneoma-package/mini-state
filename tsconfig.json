@@ -39,7 +39,6 @@
 		"incremental": true,
 		"resolveJsonModule": true,
 		"isolatedModules": true,
-		"inlineSourceMap": false,
-		"baseUrl": "./src"
+		"inlineSourceMap": false
 	}
 }

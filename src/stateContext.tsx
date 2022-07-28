@@ -1,5 +1,4 @@
-import React, { Dispatch } from "react";
-
+import React from "react";
 /**
  * This function gives you ability to create context in simple way
  * @returns
@@ -10,14 +9,15 @@ function createStateCTX<S>(initialState: S) {
 	if (typeof initialState === "undefined") {
 		throw new Error("InitialState is a required parameter in this function");
 	}
-	const defaultDispatch: Dispatch<typeof initialState> = () => initialState;
+	type UpdateType = React.Dispatch<React.SetStateAction<typeof initialState>>;
+	const defaultDispatch: UpdateType = () => initialState;
 	const Context = React.createContext({
 		state: initialState,
-		dispacth: defaultDispatch
+		dispatch: defaultDispatch
 	});
 	const Provider = (props: React.PropsWithChildren<{}>) => {
-		const [state, dispacth] = React.useState<S>(initialState);
-		return <Context.Provider value={{ state, dispacth }} {...props} />;
+		const [state, dispatch] = React.useState<S>(initialState);
+		return <Context.Provider value={{ state, dispatch }} {...props} />;
 	};
 	return [Context, Provider] as const;
 }

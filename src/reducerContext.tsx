@@ -1,5 +1,5 @@
 import React from "react";
-import { R, D, C } from "types";
+import { R, D, C } from "./types";
 
 /**
  * This function gives you ability to create context in simple way
