@@ -31,7 +31,7 @@
 		"commit": "git-cz",
 		"prepare": "tsdx build --format cjs",
 		"size": "size-limit",
-		"publish": "npm version minor && npm publish"
+		"pub": "npm version minor && npm publish"
 	},
 	"peerDependencies": {
 		"react": ">=16"
