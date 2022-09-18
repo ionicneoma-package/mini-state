@@ -1,7 +1,7 @@
 {
 	"name": "mini-state",
 	"author": "simpleneeraj",
-	"version": "1.13.0",
+	"version": "1.14.0",
 	"license": "MIT",
 	"main": "dist/index.js",
 	"typings": "dist/index.d.ts",
