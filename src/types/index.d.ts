@@ -29,7 +29,7 @@ interface ActionCretor<Action> {
 }
 
 interface CreateSliceTypes<S> {
-    name: string;
+    // name: string;
     initialState: S;
     reducer: ReducerMap<S>;
 }
